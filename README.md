@@ -19,74 +19,28 @@ I’m passionate about Blue Team operations and committed to building secure, re
 
 ## 📜 Certifications  
 
-<section id="certificates">
-  <h2>Certificates</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-    
-    <div>
-      <img src="assets/images/cert1.jpg" alt="Certificate 1" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert2.jpg" alt="Certificate 2" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert3.jpg" alt="Certificate 3" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert4.jpg" alt="Certificate 4" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert5.jpg" alt="Certificate 5" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert6.jpg" alt="Certificate 6" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert7.jpg" alt="Certificate 7" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert8.jpg" alt="Certificate 8" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert9.jpg" alt="Certificate 9" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert10.jpg" alt="Certificate 10" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert11.jpg" alt="Certificate 11" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert12.jpg" alt="Certificate 12" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert13.jpg" alt="Certificate 13" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert14.jpg" alt="Certificate 14" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert15.jpg" alt="Certificate 15" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert16.jpg" alt="Certificate 16" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert17.jpg" alt="Certificate 17" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert18.jpg" alt="Certificate 18" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert19.jpg" alt="Certificate 19" style="width:100%; border-radius:10px;">
-    </div>
-    <div>
-      <img src="assets/images/cert20.jpg" alt="Certificate 20" style="width:100%; border-radius:10px;">
-    </div>
-    
-  </div>
-</section>
+<img src="ccna-introduction-to-networks.png" alt="CCNA Introduction to Networks" width="400"/>
+<img src="ccna-switching-routing-wireless.png" alt="CCNA Switching Routing Wireless" width="400"/>
+<img src="ccna-enterprise-network-security.png" alt="CCNA Enterprise Network Security" width="400"/>
+<img src="ccna-it-essentials.png" alt="CCNA IT Essentials" width="400"/>
+<img src="network-security-fundamentals.png" alt="Network Security Fundamentals" width="400"/>
+<img src="fortigate-7.4-administrator.png" alt="FortiGate 7.4 Administrator" width="400"/>
+<img src="fortianalyzer-7.4-administrator.png" alt="FortiAnalyzer 7.4 Administrator" width="400"/>
+<img src="linux-essentials.png" alt="Linux Essentials" width="400"/>
+<img src="rhcsa.png" alt="RHCSA" width="400"/>
+<img src="windows-server-administration.png" alt="Windows Server Administration" width="400"/>
+<img src="introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity" width="400"/>
+<img src="cybersecurity-essentials.png" alt="Cybersecurity Essentials" width="400"/>
+<img src="network-defense.png" alt="Network Defense" width="400"/>
+<img src="blue-team-fundamentals.png" alt="Blue Team Fundamentals" width="400"/>
+<img src="cyber-ops-workstation.png" alt="CyberOps Workstation" width="400"/>
+<img src="xss-attack-lab.png" alt="XSS Attack Lab" width="400"/>
+<img src="ssti-project.png" alt="SSTI Project" width="400"/>
+<img src="exam-scheduling-algorithm.png" alt="Exam Scheduling Algorithm" width="400"/>
+<img src="asteroid-detection.png" alt="Asteroid Detection" width="400"/>
+<img src="bug-bounty-labs.png" alt="Bug Bounty Labs" width="400"/>
 
+    
 
 
 📫 Let’s connect:
