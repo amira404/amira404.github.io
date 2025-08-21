@@ -19,21 +19,74 @@ I’m passionate about Blue Team operations and committed to building secure, re
 
 ## 📜 Certifications  
 
-<p align="center">
-  <img src="ccna-introduction-to-networks.png" alt="CCNA Introduction to Networks" width="300"/>
-  <img src="fortinet-certified-professional-network-security.png" alt="Fortinet Certified Professional" width="300"/>
-  <img src="fortinet-fortianalyzer-7-4-administrator.png" alt="FortiAnalyzer 7.4 Administrator" width="300"/>
-  <img src="fortinet-fortigate-7-4-administrator.png" alt="FortiGate 7.4 Administrator" width="300"/>
-  <img src="fortinet-fortimanager-7-4-administrator.png" alt="FortiManager 7.4 Administrator" width="300"/>
-  <img src="introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity" width="300"/>
-  <img src="networking-basics.png" alt="Networking Basics" width="300"/>
-  <img src="red-hat-system-administration-i-rh124-rha-ver-9-3.png" alt="RH124" width="300"/>
-  <img src="red-hat-system-administration-ii-rh134-rha-ver-9-3.png" alt="RH134" width="300"/>
-  <img src="technical-introduction-to-cybersecurity-1-0.png" alt="Technical Intro to Cybersecurity 1.0" width="300"/>
-  <img src="technical-introduction-to-cybersecurity-2-0.png" alt="Technical Intro to Cybersecurity 2.0" width="300"/>
-  <img src="it-academy-cloud-and-virtualization-concepts.png" alt="Cloud and Virtualization Concepts" width="300"/>
-  <img src="it-academy-network-virtualization-concepts.png" alt="Network Virtualization Concepts" width="300"/>
-</p>
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    
+    <div>
+      <img src="assets/images/cert1.jpg" alt="Certificate 1" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert2.jpg" alt="Certificate 2" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert3.jpg" alt="Certificate 3" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert4.jpg" alt="Certificate 4" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert5.jpg" alt="Certificate 5" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert6.jpg" alt="Certificate 6" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert7.jpg" alt="Certificate 7" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert8.jpg" alt="Certificate 8" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert9.jpg" alt="Certificate 9" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert10.jpg" alt="Certificate 10" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert11.jpg" alt="Certificate 11" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert12.jpg" alt="Certificate 12" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert13.jpg" alt="Certificate 13" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert14.jpg" alt="Certificate 14" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert15.jpg" alt="Certificate 15" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert16.jpg" alt="Certificate 16" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert17.jpg" alt="Certificate 17" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert18.jpg" alt="Certificate 18" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert19.jpg" alt="Certificate 19" style="width:100%; border-radius:10px;">
+    </div>
+    <div>
+      <img src="assets/images/cert20.jpg" alt="Certificate 20" style="width:100%; border-radius:10px;">
+    </div>
+    
+  </div>
+</section>
+
 
 
 📫 Let’s connect:
