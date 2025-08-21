@@ -1,291 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amira — Cybersecurity Portfolio</title>
-  <meta name="description" content="Blue Team / Network Security portfolio and projects" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0f14;        /* Deep navy */
-      --panel:#0f1621;     /* Slightly lighter */
-      --card:#121b27;
-      --accent:#6ee7ff;    /* Soft cyan */
-      --accent-2:#a78bfa;  /* Soft purple */
-      --muted:#9fb0c3;
-      --text:#e6f0ff;
-      --ok:#34d399;        /* green */
-      --warn:#f59e0b;      /* amber */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background: radial-gradient(1200px 800px at 80% -10%, rgba(103,232,249,.08), transparent 60%), radial-gradient(900px 600px at 10% -20%, rgba(167,139,250,.08), transparent 60%), var(--bg);
-      scroll-behavior:smooth;}
-    a{ color:var(--accent); text-decoration:none }
-    a:hover{ text-decoration:underline }
-
-    /* Layout */
-    .container{ width:min(1100px, 92%); margin:0 auto; }
-    header{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background: rgba(11,15,20,.6); border-bottom:1px solid rgba(255,255,255,.06); }
-    .nav{ display:flex; align-items:center; justify-content:space-between; padding:.9rem 0; }
-    .brand{ display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:.3px }
-    .brand .dot{ width:10px; height:10px; border-radius:999px; background:linear-gradient(45deg,var(--accent),var(--accent-2)); box-shadow:0 0 0 3px rgba(110,231,255,.15)}
-    .menu{ display:flex; gap:1rem; align-items:center }
-    .menu a{ font-weight:500; color:#d7e6ff; opacity:.9 }
-
-    #menuToggle{ display:none }
-    .burger{ display:none; width:38px; height:38px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.05)); box-shadow:var(--shadow); align-items:center; justify-content:center; cursor:pointer }
-    .burger span { width:18px; height:2px; background:#e8f4ff; position:relative; display:block }
-    .burger span::before, .burger span::after{ content:""; position:absolute; left:0; width:18px; height:2px; background:#e8f4ff }
-    .burger span::before{ top:-6px } .burger span::after{ top:6px }
-
-    @media (max-width:860px){
-      .menu{ position:fixed; inset:64px 4% auto 4%; background:var(--panel); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); padding:1rem; border-radius:16px; display:none; flex-direction:column; align-items:stretch }
-      #menuToggle:checked ~ .menu{ display:flex }
-      .burger{ display:flex }
-    }
-
-    /* Hero */
-    .hero{ padding:72px 0 48px 0; display:grid; grid-template-columns: 1.2fr 1fr; gap:26px; align-items:center }
-    .badge{ display:inline-flex; align-items:center; gap:.6rem; padding:.35rem .7rem; border:1px solid rgba(255,255,255,.1); border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.15)); font-size:.86rem; color:#dbeafe }
-    .badge .ping{ width:8px; height:8px; background:var(--ok); border-radius:999px; box-shadow:0 0 0 6px rgba(52,211,153,.18) }
-    h1{ font-size:clamp(32px, 5vw, 56px); line-height:1.06; margin:.6rem 0; letter-spacing:.2px }
-    .subtitle{ font-size:1.1rem; color:var(--muted); max-width:58ch }
-    .cta{ display:flex; gap:.8rem; align-items:center; margin-top:22px }
-    .btn{ display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1rem; border-radius:14px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.1)); font-weight:600 }
-    .btn.primary{ background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0f14; border:none }
-
-    .heroCard{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.1)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow) }
-    .stat{ display:grid; grid-template-columns:auto 1fr auto; gap:8px 12px; align-items:center; padding:10px; border-radius:12px; background:rgba(255,255,255,.02); border:1px dashed rgba(255,255,255,.08); margin-top:8px }
-    .stat small{ color:var(--muted) }
-
-    @media (max-width:960px){ .hero{ grid-template-columns:1fr; } }
-
-    /* Section */
-    section{ padding:54px 0 }
-    .section-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px }
-    .title{ font-size:1.6rem }
-    .hint{ color:var(--muted) }
-
-    /* Cards grid */
-    .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px }
-    @media (max-width:960px){ .grid{ grid-template-columns: 1fr 1fr } }
-    @media (max-width:640px){ .grid{ grid-template-columns: 1fr } }
-
-    .card{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.1)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); transition: transform .15s ease, border-color .15s ease }
-    .card:hover{ transform: translateY(-3px); border-color: rgba(110,231,255,.35) }
-    .card h3{ margin:.2rem 0 .4rem }
-    .tag{ display:inline-block; font-size:.78rem; color:#0b0f14; background:linear-gradient(135deg, var(--accent), var(--accent-2)); padding:.22rem .5rem; border-radius:999px; font-weight:700 }
-
-    /* Timeline */
-    .timeline{ border-left:2px dashed rgba(255,255,255,.12); margin-left:10px; padding-left:14px }
-    .t-item{ margin:14px 0; position:relative }
-    .t-item::before{ content:""; position:absolute; left:-20px; top:6px; width:10px; height:10px; border-radius:999px; background:var(--accent); box-shadow:0 0 0 6px rgba(110,231,255,.15) }
-    .t-item h4{ margin:0 0 4px }
-    .t-item small{ color:var(--muted) }
-
-    /* Footer */
-    footer{ border-top:1px solid rgba(255,255,255,.08); padding:24px 0 60px; color:var(--muted) }
-
-    /* Avatar */
-    .avatar{ width:88px; height:88px; border-radius:20px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); padding:3px; box-shadow:var(--shadow) }
-    .avatar img{ width:100%; height:100%; object-fit:cover; border-radius:16px }
-
-    /* Utilities */
-    .row{ display:flex; gap:14px; align-items:center; flex-wrap:wrap }
-    .pill{ padding:.35rem .6rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(255,255,255,.03) }
-    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amira Muhammad | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="brand"><span class="dot"></span> Amira / Blue Team</div>
-      <label class="burger" for="menuToggle" aria-label="Open Menu"><span></span></label>
-      <input id="menuToggle" type="checkbox" hidden>
-      <nav class="menu" aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a class="pill" href="Amira_Muhammad_CV.pdf" download>Download CV</a>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed w-full z-10">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">Amira Muhammad</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#certificates" class="hover:text-blue-600">Certificates</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div>
-        <span class="badge"><span class="ping"></span> Open to Network Security roles</span>
-        <h1>Hi, I’m Amira — <br>Network Security & Blue Team Engineer</h1>
-        <p class="subtitle">Fortinet Certified Professional (FortiGate & FortiAnalyzer 7.4). Passionate about SIEM, incident response, and hardening. I love building lab topologies, documenting steps clearly, and sharing learnings.</p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Get in touch</a>
-        </div>
-        <div class="row" style="margin-top:18px">
-          <span class="pill mono">Cairo, Egypt</span>
-          <span class="pill mono">Available: Full-time</span>
-          <span class="pill mono">Email: amiramohamedwally@gmail.com</span>
-        </div>
-      </div>
-      <div class="heroCard">
-        <div class="row" style="justify-content:space-between">
-          <div class="row">
-            <div class="avatar"><img src="https://avatars.githubusercontent.com/u/000?v=4" alt="Amira avatar"/></div>
-            <div>
-              <div style="font-weight:700">Amira Muhammad</div>
-              <small class="mono">Blue Team • Network Security</small>
-            </div>
-          </div>
-          <a class="pill" href="https://www.linkedin.com/in/amira404/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-        <div class="stat">
-          <div class="tag">FCP</div>
-          <div>
-            <div style="font-weight:700">Fortinet Certified Professional</div>
-            <small>FortiGate 7.4 Administrator • FortiAnalyzer 7.4 Administrator</small>
-          </div>
-          <div class="mono">2025</div>
-        </div>
-        <div class="stat">
-          <div class="tag">CCNA</div>
-          <div>
-            <div style="font-weight:700">Cisco | VLANs, Trunking, VOIP labs</div>
-            <small>Packet Tracer & GNS3 practice with posts on LinkedIn</small>
-          </div>
-          <div class="mono">2025</div>
-        </div>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold mb-4">Hello, I'm Amira</h2>
+      <p class="text-lg">Blue Team Cybersecurity Professional | Network Security | Data Analysis</p>
+    </div>
+  </section>
 
-    <!-- About -->
-    <section id="about">
-      <div class="section-head">
-        <h2 class="title">About</h2>
-        <span class="hint">Who I am & what I do</span>
-      </div>
-      <p class="subtitle">I graduated from the Faculty of Electronic Engineering (Cybersecurity & Data Analysis). My focus is Blue Team operations: log analysis, alert triage, playbooks, and network security. I document everything step‑by‑step to make it repeatable and clear.</p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6">About Me</h2>
+    <p class="text-lg leading-relaxed">
+      I am a cybersecurity and data analysis graduate, passionate about network defense, threat detection, and building secure systems.
+      Currently focusing on Blue Team security skills with hands-on experience in firewalls, SIEM, and penetration testing labs.
+    </p>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills">
-      <div class="section-head">
-        <h2 class="title">Skills</h2>
-        <span class="hint">Stack & tools I use</span>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <h3>Networking</h3>
-          <p class="hint">Routing & Switching, VLANs, STP, OSPF, NAT, DHCP, DNS</p>
-          <div class="row">
-            <span class="pill">Cisco IOS</span><span class="pill">Packet Tracer</span><span class="pill">GNS3</span>
-          </div>
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-100 py-16 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <h3 class="font-semibold mb-2">Small Office Network Design</h3>
+          <p>Implemented VLANs, routing, and security configurations using Cisco Packet Tracer.</p>
         </div>
-        <div class="card">
-          <h3>Security</h3>
-          <p class="hint">Hardening, ACLs, IPS/IDS, VPN, SIEM (queries & dashboards)</p>
-          <div class="row">
-            <span class="pill">FortiGate</span><span class="pill">FortiAnalyzer</span><span class="pill">Wazuh</span><span class="pill">Linux</span>
-          </div>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <h3 class="font-semibold mb-2">Exam Scheduling Algorithm</h3>
+          <p>Developed a scheduling program with Python to automate exam timetables based on credit hours.</p>
         </div>
-        <div class="card">
-          <h3>Scripting</h3>
-          <p class="hint">Automation & log parsing</p>
-          <div class="row">
-            <span class="pill">Bash</span><span class="pill">Python</span><span class="pill">Regex</span>
-          </div>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <h3 class="font-semibold mb-2">Asteroid Detection Program</h3>
+          <p>Built a Python tool to automate asteroid detection from astronomical images.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="section-head">
-        <h2 class="title">Projects</h2>
-        <span class="hint">Hands‑on labs & write‑ups</span>
+  <!-- Certificates Section -->
+  <section id="certificates" class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6">Certificates</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <img src="certificates/fortigate.png" alt="FortiGate Certification" class="rounded-lg mb-2"/>
+        <p class="text-center">Fortinet Certified Professional – FortiGate Administrator</p>
       </div>
-      <div class="grid">
-        <article class="card">
-          <div class="row" style="justify-content:space-between">
-            <h3>FortiGate 7.4 — Basic to Advanced Policies</h3>
-            <span class="tag">Firewall</span>
-          </div>
-          <p class="hint">Setup, interfaces, objects, policies, NAT, logging to FortiAnalyzer. Clear screenshots and steps.</p>
-          <div class="row"><a href="#" class="pill">Case study</a><a href="#" class="pill">GitHub</a></div>
-        </article>
-        <article class="card">
-          <div class="row" style="justify-content:space-between">
-            <h3>CCNA Labs — VLAN, Trunk, VoIP</h3>
-            <span class="tag">Cisco</span>
-          </div>
-          <p class="hint">Packet Tracer topology with VLANs, trunking, access ports, and a simple VoIP setup; config snippets included.</p>
-          <div class="row"><a href="#" class="pill">Post</a><a href="#" class="pill">Repo</a></div>
-        </article>
-        <article class="card">
-          <div class="row" style="justify-content:space-between">
-            <h3>SIEM Detections — Wazuh Playbooks</h3>
-            <span class="tag">SIEM</span>
-          </div>
-          <p class="hint">From parsing to alert triage; creating rules and dashboards for brute force and persistence techniques.</p>
-          <div class="row"><a href="#" class="pill">Write‑up</a><a href="#" class="pill">Screens</a></div>
-        </article>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <img src="certificates/fortianalyzer.png" alt="FortiAnalyzer Certification" class="rounded-lg mb-2"/>
+        <p class="text-center">Fortinet Certified Professional – FortiAnalyzer Administrator</p>
       </div>
-    </section>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <img src="certificates/redhat.png" alt="Red Hat Certification" class="rounded-lg mb-2"/>
+        <p class="text-center">Red Hat Certified System Administrator (RHCSA)</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Experience / Certifications -->
-    <section id="experience">
-      <div class="section-head">
-        <h2 class="title">Experience & Certifications</h2>
-        <span class="hint">What I’ve done</span>
-      </div>
-      <div class="timeline">
-        <div class="t-item">
-          <h4>Fortinet Certified Professional — Network Security</h4>
-          <small>Aug 2025 — Valid until Aug 2027 • Validation: 6020461772AM</small>
-        </div>
-        <div class="t-item">
-          <h4>Windows/Linux Administration Labs</h4>
-          <small>2025 • VMware, RHEL/CentOS, hardening, users/groups, http repo</small>
-        </div>
-        <div class="t-item">
-          <h4>Blue Team Path — Incident Response</h4>
-          <small>Playbook creation, log enrichment, reporting with clear evidence</small>
-        </div>
-      </div>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-100 py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <p class="mb-4">Feel free to reach out for collaboration or opportunities.</p>
+      <p>Email: <a href="mailto:amiramohamedwally@gmail.com" class="text-blue-600">amiramohamedwally@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/amira404" target="_blank" class="text-blue-600">linkedin.com/in/amira404</a></p>
+      <p>GitHub: <a href="https://github.com/amira404" target="_blank" class="text-blue-600">github.com/amira404</a></p>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="section-head">
-        <h2 class="title">Contact</h2>
-        <span class="hint">Let’s collaborate</span>
-      </div>
-      <div class="card">
-        <p>Reach out for opportunities, collaborations, or mentorship. I reply within 24 hours.</p>
-        <div class="row">
-          <a class="btn primary" href="mailto:amiramohamedwally@gmail.com">Email Me</a>
-          <a class="btn" href="https://github.com/amira404" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/amira404/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">© <span id="y"></span> Amira Muhammad — Built with GitHub Pages</div>
+  <!-- Footer -->
+  <footer class="bg-white shadow-inner py-4 text-center text-sm">
+    © 2025 Amira Muhammad. All rights reserved.
   </footer>
-
-  <script>
-    // Dynamic year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
